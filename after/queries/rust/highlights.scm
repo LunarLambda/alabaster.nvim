@@ -43,11 +43,43 @@
 
 (for_expression
   "in" @AlabasterPunctuation)
-(type_arguments
-  "<" @AlabasterPunctuation)
-(type_arguments
-  ">" @AlabasterPunctuation)
-(type_parameters
-  "<" @AlabasterPunctuation)
-(type_parameters
-  ">" @AlabasterPunctuation)
+
+; Fixes
+[
+  (outer_doc_comment_marker)
+  (inner_doc_comment_marker)
+] @comment.documentation
+
+; Resets
+(enum_variant name: (identifier) @variable.member)
+
+(scoped_identifier name: (identifier) @module)
+
+(scoped_type_identifier name: (type_identifier) @module)
+
+(attribute (identifier) @attribute.macro)
+
+(field_expression (integer_literal) @variable.member)
+
+; Definitions
+(mod_item name: (identifier) @AlabasterDefinition)
+
+; De-emphasized elements
+[
+  "ref"
+  "raw"
+  (mutable_specifier)
+  ".."
+  "..="
+  "..."
+] @operator
+
+; "Attention" elements
+(unsafe_block "unsafe" @AlabasterAttention)
+
+((mutable_specifier) [
+  (identifier)
+  (shorthand_field_identifier)
+  (self)] @AlabasterAttention)
+
+((identifier) @AlabasterAttention (#eq? @AlabasterAttention "_"))
