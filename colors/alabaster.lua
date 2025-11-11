@@ -27,7 +27,7 @@ if vim.o.background == "dark" then
     vim.g.terminal_color_15 = "#ffffff"
 
     -- colors
-    local bg = "#0e1415"
+    local bg = vim.g.alabaster_transparent and "NONE" or "#0e1415"
     local fg = "#cecece"
     local punct_fg = "#708b8d"
     local def_fg = "#71ade7"
@@ -425,7 +425,7 @@ else
     vim.g.terminal_color_15 = "#f7f7f7"
 
     -- colors
-    local bg = "#f7f7f7"
+    local bg = vim.g.alabaster_transparent and "NONE" or "#f7f7f7"
     local fg = "#000000"
     local punct_fg = "#777777"
     local def_fg = "#325cc0"
