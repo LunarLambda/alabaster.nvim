@@ -66,6 +66,7 @@
 
 ; De-emphasized elements
 [
+  "await"
   "ref"
   "raw"
   (mutable_specifier)
@@ -83,3 +84,20 @@
   (self)] @AlabasterAttention)
 
 ((identifier) @AlabasterAttention (#eq? @AlabasterAttention "_"))
+
+"dyn" @AlabasterAttention
+
+; Keywords
+[
+  "let"
+  "return"
+  "if"
+  "else"
+  "match"
+  "break"
+  "continue"
+  "loop"
+  "while"
+] @constant
+
+(for_expression "for" @constant)
