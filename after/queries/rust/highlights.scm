@@ -61,6 +61,8 @@
 
 (field_expression (integer_literal) @variable.member)
 
+(lifetime (identifier) @attribute)
+
 ; Definitions
 (mod_item name: (identifier) @AlabasterDefinition)
 
@@ -85,11 +87,14 @@
 
 ((identifier) @AlabasterAttention (#eq? @AlabasterAttention "_"))
 
-"dyn" @AlabasterAttention
+[
+  "dyn"
+  "extern"
+] @AlabasterAttention
 
 ; Keywords
 [
-  "let"
+  "move"
   "return"
   "if"
   "else"
@@ -101,3 +106,7 @@
 ] @constant
 
 (for_expression "for" @constant)
+
+(async_block "async" @constant)
+
+(closure_expression "async" @constant)
