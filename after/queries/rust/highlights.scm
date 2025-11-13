@@ -53,7 +53,9 @@
 ; Resets
 (enum_variant name: (identifier) @variable.member)
 
-(scoped_identifier name: (identifier) @module)
+((scoped_identifier
+  name: (identifier) @module)
+  (#not-lua-match? @module "^[A-Z][A-Z%d_]*$"))
 
 (scoped_type_identifier name: (type_identifier) @module)
 
