@@ -69,6 +69,9 @@
 (mod_item name: (identifier) @AlabasterDefinition)
 
 ; De-emphasized elements
+((identifier) @operator
+  (#lua-match? @operator "^_"))
+
 [
   "await"
   "ref"
