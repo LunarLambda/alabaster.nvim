@@ -33,13 +33,13 @@
 (trait_item
   body: (declaration_list
           (function_signature_item
-            name: (identifier) @AlabasterDefinition)))
+            name: (identifier) @AlabasterDefinition (#set! priority 105))))
 
 (function_item
-  name: (identifier) @AlabasterDefinition)
+  name: (identifier) @AlabasterDefinition (#set! priority 105))
 
 (macro_definition
-  name: (identifier) @AlabasterDefinition)
+  name: (identifier) @AlabasterDefinition (#set! priority 105))
 
 (for_expression
   "in" @AlabasterPunctuation)
@@ -66,11 +66,18 @@
 (lifetime (identifier) @attribute)
 
 ; Definitions
-(mod_item name: (identifier) @AlabasterDefinition)
+(mod_item name: (identifier) @AlabasterDefinition (#set! priority 105))
+
+(type_item name: (type_identifier) @AlabasterDefinition)
 
 ; De-emphasized elements
 ((identifier) @operator
-  (#lua-match? @operator "^_"))
+  (#lua-match? @operator "^_")
+  (#not-has-parent? @operator
+    scoped_identifier
+    scoped_type_identifier
+    const_item
+    static_item))
 
 [
   "await"
