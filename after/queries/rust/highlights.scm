@@ -70,6 +70,9 @@
 
 (type_item name: (type_identifier) @AlabasterDefinition)
 
+(extern_crate_declaration !alias name: (identifier) @AlabasterDefinition (#set! priority 105))
+(extern_crate_declaration alias: (identifier) @AlabasterDefinition (#set! priority 105))
+
 ; De-emphasized elements
 ((identifier) @operator
   (#lua-match? @operator "^_")
@@ -77,7 +80,8 @@
     scoped_identifier
     scoped_type_identifier
     const_item
-    static_item))
+    static_item
+    extern_crate_declaration))
 
 [
   "await"
@@ -99,10 +103,9 @@
 
 ((identifier) @AlabasterAttention (#eq? @AlabasterAttention "_"))
 
-[
-  "dyn"
-  "extern"
-] @AlabasterAttention
+"dyn" @AlabasterAttention
+
+("extern" @AlabasterAttention (#not-has-parent? @AlabasterAttention extern_crate_declaration))
 
 ; Keywords
 [
