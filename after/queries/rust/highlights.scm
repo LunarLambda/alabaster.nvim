@@ -93,6 +93,8 @@
   "..."
 ] @operator
 
+(pointer_type "const" @operator)
+
 ; "Attention" elements
 (unsafe_block "unsafe" @AlabasterAttention)
 
