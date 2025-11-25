@@ -120,10 +120,10 @@
   "continue"
   "loop"
   "while"
-] @constant
+] @AlabasterKeyword
 
-(for_expression "for" @constant)
+(for_expression "for" @AlabasterKeyword)
 
-(async_block "async" @constant)
+(async_block "async" @AlabasterKeyword)
 
-(closure_expression "async" @constant)
+(closure_expression "async" @AlabasterKeyword)
