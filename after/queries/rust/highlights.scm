@@ -109,6 +109,25 @@
 
 ("extern" @AlabasterAttention (#not-has-parent? @AlabasterAttention extern_crate_declaration))
 
+(never_type "!" @AlabasterAttention)
+
+(macro_invocation "!" @AlabasterAttention)
+
+(macro_invocation
+  macro: (identifier) @_identifier @Alabasterattention
+  "!" @AlabasterAttention
+  (#any-of? @_identifier
+    "assert"
+    "assert_eq"
+    "assert_ne"
+    "debug_assert"
+    "debug_assert_eq"
+    "debug_assert_ne"
+    "panic"
+    "todo"
+    "unimplemented"
+    "unreachable"))
+
 ; Keywords
 [
   "move"

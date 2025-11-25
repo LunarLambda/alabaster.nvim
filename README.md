@@ -1,5 +1,23 @@
-Alabaster Color Scheme
+Alabaster Color Scheme (Enhanced Fork)
 ===
+
+## Changes in this fork:
+
+- Character literals and escape use the string literal color.
+- Transparent background support by setting `g:alabaster_transparent = 1`
+
+### Rust-specific enhancements:
+
+- Highlight macro invocations
+- Draw attention to elements like `unsafe` blocks, `extern` decls, `mut` bindings & expressions,
+  `_` placeholders, `dyn`, panic/assert macros...
+- Don't color all enums, only `Some`/`None`/`Ok`/`Err`.
+- Make highlighting of declarations more consistent (`extern crate`, `type`, `mod`).
+- De-emphasize unused variables `_foo`
+- De-emphasize doc comments, binding modifiers, range patterns
+- Optionally highlight **control flow keywords** with `g:alabaster_keywords = 1`.
+
+# ORIGINAL UNMODIFIED README BELOW:
 
 A color scheme with minimal amount of highlighting for neovim.
 
