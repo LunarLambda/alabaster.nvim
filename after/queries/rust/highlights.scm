@@ -128,6 +128,22 @@
     "unimplemented"
     "unreachable"))
 
+(call_expression function: (identifier) @AlabasterAttention
+  (#any-of? @AlabasterAttention
+   "expect"
+   "expect_err"
+   "unwrap"
+   "unwrap_err"))
+
+(call_expression
+  function:
+    (field_expression field: (field_identifier) @AlabasterAttention)
+  (#any-of? @AlabasterAttention
+    "expect"
+    "expect_err"
+    "unwrap"
+    "unwrap_err"))
+
 ; Keywords
 [
   "move"
